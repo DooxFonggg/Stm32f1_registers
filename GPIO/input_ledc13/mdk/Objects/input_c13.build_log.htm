@@ -82,19 +82,41 @@ void gpio_setlowlet(void){
 void gpio_setlowlet(void){
 ^
 static 
-../user/main.c(40): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+../user/main.c(38): warning: no previous prototype for function 'gpio_getButton' [-Wmissing-prototypes]
+unsigned char gpio_getButton(void) {
+              ^
+../user/main.c(38): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned char gpio_getButton(void) {
+^
+static 
+../user/main.c(51): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
 int main() {
         ^
          void
-../user/main.c(57): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-12 warnings generated.
+../user/main.c(47): warning: no previous extern declaration for non-static variable 'oldButton' [-Wmissing-variable-declarations]
+unsigned char oldButton;
+              ^
+../user/main.c(47): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned char oldButton;
+^
+../user/main.c(48): warning: no previous extern declaration for non-static variable 'newButton' [-Wmissing-variable-declarations]
+unsigned char newButton;
+              ^
+../user/main.c(48): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned char newButton;
+^
+../user/main.c(49): warning: no previous extern declaration for non-static variable 'ledStatus' [-Wmissing-variable-declarations]
+unsigned char ledStatus;
+              ^
+../user/main.c(49): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned char ledStatus;
+^
+15 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=948 RO-data=252 RW-data=0 ZI-data=1632  
+Program Size: Code=952 RO-data=252 RW-data=0 ZI-data=1632  
 FromELF: creating hex file...
-".\Objects\input_c13.axf" - 0 Error(s), 12 Warning(s).
+".\Objects\input_c13.axf" - 0 Error(s), 15 Warning(s).
 
 <h2>Software Packages used:</h2>
 
