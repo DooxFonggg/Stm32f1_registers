@@ -27,96 +27,7 @@ Project File Date:  01/22/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-../user/main.c(1): warning: // comments are not allowed in this language [-Wcomment]
-#include "stm32f10x.h"                  // Device header
-                                        ^
-../user/main.c(1): warning: In file included from...
-D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-                                               ^
-D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *                code will be based on direct access to peripheral<92>s registers 
-                                                                    ^
-D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *           - Macros to access peripheral<92>s registers hardware
-                                           ^
-../user/main.c(4): warning: no previous prototype for function 'delay' [-Wmissing-prototypes]
-void delay(int time) {
-     ^
-../user/main.c(4): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void delay(int time) {
-^
-static 
-../user/main.c(11): warning: no previous prototype for function 'rcc_config' [-Wmissing-prototypes]
-void rcc_config(void){
-     ^
-../user/main.c(11): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void rcc_config(void){
-^
-static 
-../user/main.c(18): warning: no previous prototype for function 'config_c13' [-Wmissing-prototypes]
-void config_c13(void){
-     ^
-../user/main.c(18): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void config_c13(void){
-^
-static 
-../user/main.c(24): warning: no previous prototype for function 'cofig_b9' [-Wmissing-prototypes]
-void cofig_b9(void) {
-     ^
-../user/main.c(24): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void cofig_b9(void) {
-^
-static 
-../user/main.c(32): warning: no previous prototype for function 'gpio_setled' [-Wmissing-prototypes]
-void gpio_setled(void) {
-     ^
-../user/main.c(32): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void gpio_setled(void) {
-^
-static 
-../user/main.c(35): warning: no previous prototype for function 'gpio_setlowlet' [-Wmissing-prototypes]
-void gpio_setlowlet(void){
-     ^
-../user/main.c(35): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void gpio_setlowlet(void){
-^
-static 
-../user/main.c(38): warning: no previous prototype for function 'gpio_getButton' [-Wmissing-prototypes]
-unsigned char gpio_getButton(void) {
-              ^
-../user/main.c(38): note: declare 'static' if the function is not intended to be used outside of this translation unit
-unsigned char gpio_getButton(void) {
-^
-static 
-../user/main.c(51): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-int main() {
-        ^
-         void
-../user/main.c(47): warning: no previous extern declaration for non-static variable 'oldButton' [-Wmissing-variable-declarations]
-unsigned char oldButton;
-              ^
-../user/main.c(47): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-unsigned char oldButton;
-^
-../user/main.c(48): warning: no previous extern declaration for non-static variable 'newButton' [-Wmissing-variable-declarations]
-unsigned char newButton;
-              ^
-../user/main.c(48): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-unsigned char newButton;
-^
-../user/main.c(49): warning: no previous extern declaration for non-static variable 'ledStatus' [-Wmissing-variable-declarations]
-unsigned char ledStatus;
-              ^
-../user/main.c(49): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-unsigned char ledStatus;
-^
-15 warnings generated.
-compiling main.c...
-linking...
-Program Size: Code=952 RO-data=252 RW-data=0 ZI-data=1632  
-FromELF: creating hex file...
-".\Objects\input_c13.axf" - 0 Error(s), 15 Warning(s).
+".\Objects\input_c13.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -147,7 +58,7 @@ Package Vendor: Keil
       Source file:   Device/Source/system_stm32f10x.c
       Include file:  RTE_Driver/Config/RTE_Device.h
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

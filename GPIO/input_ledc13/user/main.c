@@ -19,13 +19,13 @@ void config_c13(void){
 	//reset CRH
 	GPIOC->CRH = 0x00000000;
 	//config mode 11 cnf 00
-	GPIOC->CRH |= 0x00300000;
+	GPIOC->CRH |= 0x300000;
 }
 void cofig_b9(void) {
     //reset CRH
 	GPIOB->CRH = 0x00000000;
 	//cofig chan
-	GPIOB->CRH |= 0x00000080;
+	GPIOB->CRH |= 0x80;
 	//bat outbut chan b90 de nhan tin hieu button
 	GPIOB->ODR |= (1<<9);
 }
