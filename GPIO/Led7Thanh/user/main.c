@@ -3,17 +3,18 @@
 GPIO_InitTypeDef  GPIO_InitStructure; 
 
 
-void Delay_SysTick_Ms (uint32_t ms) 
+void Delay_SysTick_Ms (int time) 
 {
-	volatile uint32_t i, j;
-    for (i = 0; i < ms; i++) {
-        for (j = 0; j < 7200; j++); // Ði?u ch?nh h?ng s? này d? tang ho?c gi?m th?i gian delay
-    }
+	unsigned int count;
+	while(time--){
+		for (count = 0; count < 1000; count++);
+	}
 }
 
 //mang led tu 1->9
 
 uint8_t LedCode7seg[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+
 
 // no la so d(D1, D2D3,D4)  u32Number la so cua mang 0->9
 void ShowLed7Seg(uint8_t no, uint32_t u32Number) {
@@ -157,6 +158,58 @@ void Display_7Seg(uint32_t u32Number)
 	ShowLed7Seg(1, u32Digit);
 	// boc tung so xong ghi vao den d1 la luu het cac so 
 }
+
+void Display_Led7(uint32_t u32Number) {
+	// uint32_t u32TempNumber = 0U;
+	 unsigned int temp;
+	 temp = LedCode7seg[u32Number]; // giá tri khoi tao mang  
+	
+	  
+	   // so 1 thi b c muc 0 con lai muc 1 . oxF9  (0x11111001)
+	
+		if((temp&0x01)==0x01)		   		 //   a
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_0);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_0); 		  
+		   temp=temp>>1;
+		   
+		if((temp&0x01)==0x01)		   		 //   b
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_1);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_1); 		  
+		   temp=temp>>1;
+		
+		if((temp&0x01)==0x01)		   		 //   c
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_2);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_2); 		  
+		   temp=temp>>1;
+		
+		if((temp&0x01)==0x01)		   		 //   d
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_3);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_3); 		  
+		   temp=temp>>1;
+		   
+		if((temp&0x01)==0x01)		   		 //   e
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_4);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_4); 		  
+		   temp=temp>>1;
+		
+		if((temp&0x01)==0x01)		   		 //   f
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_5);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_5); 		  
+		   temp=temp>>1;
+			 
+		if((temp&0x01)==0x01)		   		 //   g
+		   GPIO_SetBits(GPIOA ,GPIO_Pin_6);   
+		   else
+		   GPIO_ResetBits(GPIOA ,GPIO_Pin_6); 		  
+		   temp=temp>>1;
+	
+}
 void GPIO_Config(void) {
 	
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
@@ -166,14 +219,33 @@ void GPIO_Config(void) {
 	//tao config de su dung
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
+void GPIO_Config2(void) 
+{
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1| GPIO_Pin_2| GPIO_Pin_3| GPIO_Pin_4| GPIO_Pin_5| GPIO_Pin_6;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	
+	//tao config de su dung
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+}
 uint32_t cnt= 0U; //so 0
 
 int main() 
-{
-	GPIO_Config();
+{   
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	//GPIO_Config();
+	GPIO_Config2();
 	while(1)
 	{
-		Display_7Seg(cnt);
-		cnt++;
-	}
+		//Display_7Seg(cnt);
+		//cnt++;
+		uint32_t i = 0;
+		for(i = 0; i<10; i++) 
+		{
+			Display_Led7(i);
+			Delay_SysTick_Ms(2000);
+		}
+	}  
+	
+	
 }

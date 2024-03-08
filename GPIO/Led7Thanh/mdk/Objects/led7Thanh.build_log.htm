@@ -17,20 +17,22 @@ Library Manager: ArmAr.exe V6.19
 Hex Converter:   FromElf.exe V6.19
 CPU DLL:         SARMCM3.DLL V5.38.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      UL2CM3.DLL V1.164.8.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\Nhúng\Stm32f1\GPIO\Led7Thanh\mdk\led7Thanh.uvprojx
-Project File Date:  02/17/2024
+Project File Date:  03/07/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Target 1'
+*** Note: Rebuilding project, since 'Options->Output->Create Batch File' is selected.
+Rebuild target 'Target 1'
+compiling main.c...
 ../user/main.c(1): warning: // comments are not allowed in this language [-Wcomment]
-//                                                        HO VA TEN : NGUYEN HUU TIEN
-^
-../user/main.c(5): warning: In file included from...
+#include "stm32f10x.h"                  // Device header
+                                        ^
+../user/main.c(1): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
                                                ^
@@ -40,7 +42,7 @@ D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\s
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
   *           - Macros to access peripheral<92>s registers hardware
                                            ^
-../user/main.c(5): warning: In file included from...
+../user/main.c(1): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
 ./RTE/Device/STM32F103C8\stm32f10x_conf.h(63): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
@@ -53,7 +55,7 @@ D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\s
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
   *           - Macros to access peripheral<92>s registers hardware
                                            ^
-../user/main.c(5): warning: In file included from...
+../user/main.c(1): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
 ./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
@@ -66,7 +68,7 @@ D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\s
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
   *           - Macros to access peripheral<92>s registers hardware
                                            ^
-../user/main.c(5): warning: In file included from...
+../user/main.c(1): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
 ./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
@@ -79,43 +81,265 @@ D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\s
 D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
   *           - Macros to access peripheral<92>s registers hardware
                                            ^
-../user/main.c(27): warning: implicit declaration of function 'RCC_AHB1PeriphClockCmd' [-Wimplicit-function-declaration]
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD , ENABLE);
-  ^
-../user/main.c(27): error: use of undeclared identifier 'RCC_AHB1Periph_GPIOD'
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD , ENABLE);
-                         ^
-../user/main.c(30): error: use of undeclared identifier 'GPIO_Mode_OUT'
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;     
-                                 ^
-../user/main.c(31): error: no member named 'GPIO_OType' in 'GPIO_InitTypeDef'
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;     
-  ~~~~~~~~~~~~~~~~~~ ^
-../user/main.c(31): error: use of undeclared identifier 'GPIO_OType_PP'
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;     
-                                  ^
-../user/main.c(32): error: use of undeclared identifier 'GPIO_Speed_100MHz'; did you mean 'GPIO_Speed_10MHz'?
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;  
-                                  ^~~~~~~~~~~~~~~~~
-                                  GPIO_Speed_10MHz
-D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(59): note: 'GPIO_Speed_10MHz' declared here
-  GPIO_Speed_10MHz = 1,
-  ^
-../user/main.c(33): error: no member named 'GPIO_PuPd' in 'GPIO_InitTypeDef'
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;    
-  ~~~~~~~~~~~~~~~~~~ ^
-../user/main.c(33): error: use of undeclared identifier 'GPIO_PuPd_NOPULL'
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;    
-                                 ^
-../user/main.c(7): warning: no previous extern declaration for non-static variable 'GPIO_InitStructure' [-Wmissing-variable-declarations]
+../user/main.c(6): warning: no previous prototype for function 'Delay_SysTick_Ms' [-Wmissing-prototypes]
+void Delay_SysTick_Ms (int time) 
+     ^
+../user/main.c(6): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Delay_SysTick_Ms (int time) 
+^
+static 
+../user/main.c(16): warning: no previous extern declaration for non-static variable 'LedCode7seg' [-Wmissing-variable-declarations]
+uint8_t LedCode7seg[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+        ^
+../user/main.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t LedCode7seg[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+^
+../user/main.c(23): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+        u32TempNumber = LedCode7seg[u32Number]; // gi<E1> tri khoi tao mang  
+                                                     ^
+../user/main.c(20): warning: no previous prototype for function 'ShowLed7Seg' [-Wmissing-prototypes]
+void ShowLed7Seg(uint8_t no, uint32_t u32Number) {
+     ^
+../user/main.c(20): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ShowLed7Seg(uint8_t no, uint32_t u32Number) {
+^
+static 
+../user/main.c(124): warning: no previous prototype for function 'Display_7Seg' [-Wmissing-prototypes]
+void Display_7Seg(uint32_t u32Number) 
+     ^
+../user/main.c(124): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Display_7Seg(uint32_t u32Number) 
+^
+static 
+../user/main.c(165): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+         temp = LedCode7seg[u32Number]; // gi<E1> tri khoi tao mang  
+                                             ^
+../user/main.c(162): warning: no previous prototype for function 'Display_Led7' [-Wmissing-prototypes]
+void Display_Led7(uint32_t u32Number) {
+     ^
+../user/main.c(162): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Display_Led7(uint32_t u32Number) {
+^
+static 
+../user/main.c(213): warning: no previous prototype for function 'GPIO_Config' [-Wmissing-prototypes]
+void GPIO_Config(void) {
+     ^
+../user/main.c(213): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void GPIO_Config(void) {
+^
+static 
+../user/main.c(222): warning: no previous prototype for function 'GPIO_Config2' [-Wmissing-prototypes]
+void GPIO_Config2(void) 
+     ^
+../user/main.c(222): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void GPIO_Config2(void) 
+^
+static 
+../user/main.c(231): warning: no previous extern declaration for non-static variable 'cnt' [-Wmissing-variable-declarations]
+uint32_t cnt= 0U; //so 0
+         ^
+../user/main.c(231): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t cnt= 0U; //so 0
+^
+../user/main.c(233): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+int main() 
+        ^
+         void
+../user/main.c(3): warning: no previous extern declaration for non-static variable 'GPIO_InitStructure' [-Wmissing-variable-declarations]
 GPIO_InitTypeDef  GPIO_InitStructure; 
                   ^
-../user/main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+../user/main.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 GPIO_InitTypeDef  GPIO_InitStructure; 
 ^
-15 warnings and 7 errors generated.
-compiling main.c...
-".\Objects\led7Thanh.axf" - 7 Error(s), 15 Warning(s).
+25 warnings generated.
+compiling misc.c...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(23): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(23): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(63): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(23): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(131): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+                                               ~ ^~~~~~~~~~~
+10 warnings generated.
+compiling stm32f10x_gpio.c...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_gpio.c(22): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_gpio.c(22): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_gpio.c(22): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+9 warnings generated.
+compiling stm32f10x_rcc.c...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(22): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(22): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(63): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(22): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+9 warnings generated.
+assembling startup_stm32f10x_md.s...
+compiling system_stm32f10x.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(63): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_gpio.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+D:/Users/phong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+13 warnings generated.
+linking...
+Program Size: Code=1744 RO-data=268 RW-data=12 ZI-data=1640  
+FromELF: creating hex file...
+".\Objects\led7Thanh.axf" - 0 Error(s), 66 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -146,27 +370,26 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
-      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
       Source file:   Device/Source/system_stm32f10x.c
       Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
-      Source file:   Device/StdPeriph_Driver/src/misc.c
       Source file:   Device/StdPeriph_Driver/templates/stm32f10x_conf.h
-      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
+      Source file:   Device/StdPeriph_Driver/src/misc.c
       Source file:   Device/StdPeriph_Driver/templates/stm32f10x_it.c
+      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
       Include file:  Device/StdPeriph_Driver/inc/misc.h
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
-      Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
       Include file:  Device/StdPeriph_Driver/inc/stm32f10x_gpio.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
 
    * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
-      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
       Source file:   Device/StdPeriph_Driver/src/stm32f10x_rcc.c
-Target not created.
-Build Time Elapsed:  00:00:00
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
